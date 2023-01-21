@@ -27,7 +27,7 @@ function AllProjects() {
           <div class="col-12  col-md-4">
               <Link
                 style={{ textDecoration: "none", color: "#15171c" }}
-                // to={`/${item.id}`}
+                to={`/${item.projectId}`}
                 key={index}
               >
                 <div class={"card text-center  m-5 p-5 shadow "+ styles.cards}  style={{backgroundColor: "whitesmoke" }}>
