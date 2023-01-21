@@ -66,7 +66,7 @@ export const AddEmployee = () => {
             method: "POST",
             data: formdata
           }).then((response) => {
-            alert("Employee Added Successfully");
+            alert("Manager Added Successfully");
                window.location.reload(true);
             })
         }else{
@@ -74,7 +74,12 @@ export const AddEmployee = () => {
       url: 'http://localhost:8080/employee/profile-image/add',
       method: "POST",
       data: formdata
-    })}})
+    }).then((response) => {
+      alert("Employee Added Successfully");
+         window.location.reload(true);
+      })
+    }
+  })
       .catch((error) => {
         alert("Enter all details");
         //navigate("/");

@@ -13,8 +13,8 @@ function AllProjects() {
   }, []);
 
   return (
-    <div className={"allprojects"}>
-      <div className="container p-5">
+    <div className={styles.allprojects}>
+      <div className="container ">
       <div
           className={styles.heading}
           style={{ paddingTop: "1%", textAlign: "center" }}
