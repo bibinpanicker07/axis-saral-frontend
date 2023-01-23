@@ -6,20 +6,23 @@ import { IoSend } from "react-icons/io5";
 import { FaComment } from "react-icons/fa";
 import Collapse from 'react-bootstrap/Collapse';
 function Comment(props) {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [open, setOpen] = useState(false);
   const [comment, setComment] = useState({
     message: "",
-    empId: 4,
     feedId: props.posts.newsFeedId,
   });
   function postComment(e) {
     e.preventDefault();
     console.log(comment);
     axios
-      .post("http://localhost:8080/employee/comment/add", comment)
+      .post("http://localhost:8080/employee/comment/add", comment,config)
       .then((response) => {
 
-        alert(response.data);
+        // alert(response.data);
         window.location.reload(true);
 
         // navigate("/newsfeed");
@@ -75,6 +78,9 @@ function Comment(props) {
 
                                           <h5 className={styles.itemDes}>
                                             {item1?.employee?.firstName} {item1?.employee?.lastName}
+                                          </h5>
+                                          <h5 className={styles.itemDes}>
+                                            {item1?.manager?.firstName} {item1?.manager?.lastName}
                                           </h5>
                                           <p className={styles.itemName}>
                                             {item1?.message}

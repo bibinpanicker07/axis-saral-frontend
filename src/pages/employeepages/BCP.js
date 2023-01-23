@@ -1,7 +1,10 @@
+import Sidebar from "../../components/employeeSidebar/Sidebar";
 import styles from "./BCP.module.css"
 function BCP(){
     
     return(
+        <>
+        <Sidebar />
         <div className={styles.bcp}>
             
             <h1>Employee Code of Conduct</h1>
@@ -31,7 +34,7 @@ We also respect and permit grooming styles, clothing and accessories that are di
             <p>We must avoid situations involving an actual or potential conflict of interest so that even the slightest doubt about our integrity is not raised. To avoid conflicts of interest and any appearance of favouritism, ensure that you do not work directly for, supervise or make employment decisions about a family member. Personal or romantic involvement with a competitor, supplier, or another employee of the Company might affect your ability to exercise good judgment on behalf of the Company. This could lead to a conflict of interest. Personal relationships and romantic liaisons between employees who are in a manager-employee reporting structure may lead to team management challenges and reduced morale. 
                 Such relationships must be disclosed to the manager immediately who may take appropriate corrective action.</p>
         </div>
-
+        </>
     );
 }
 

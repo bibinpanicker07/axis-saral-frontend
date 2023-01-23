@@ -5,11 +5,13 @@ import invest from '../../images/investment.png'
 import insurance from '../../images/insurance.png'
 import loan from '../../images/loan.png'
 import styles from './products.module.css'
+import Sidebar from '../../components/employeeSidebar/Sidebar'
 function Products(){
 
 
-
     return(
+      <>
+  <Sidebar/>
         <div className={styles.products}>
         
 
@@ -61,7 +63,7 @@ function Products(){
      
 
         </div>
-
+        </>
 )
 
 }

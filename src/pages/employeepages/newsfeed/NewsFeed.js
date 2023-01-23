@@ -3,16 +3,22 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./NewsFeed.module.css";
 import Comments from './Comments';
+import Sidebar from '../../../components/employeeSidebar/Sidebar';
 function NewsFeed(props) {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [post, setPost] = useState([]);
  
   useEffect(() => {
-    axios.get(`http://localhost:8080/news`).then((response) => {
+    axios.get(`http://localhost:8080/news`,config).then((response) => {
       setPost(response.data);     
     });
   },[]);
   return (
    <> 
+   <Sidebar />
     <div> <div className={styles.newsfeed}>
       <div className="container ">
 

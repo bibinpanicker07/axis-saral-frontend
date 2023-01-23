@@ -3,6 +3,7 @@ import styles from "./employee.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import Sidebar from "../../components/adminSidebar/Sidebar";
 export const EditProject = () => {
   return (
     <div className="project">
@@ -12,6 +13,10 @@ export const EditProject = () => {
 };
 
 export const AddProject = () => {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [project, setProject] = useState({
     projectName: "",
     description: "",
@@ -21,7 +26,7 @@ export const AddProject = () => {
   function addProject(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8080/add`, project)
+      .post(`http://localhost:8080/add`, project,token)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)
@@ -33,6 +38,8 @@ export const AddProject = () => {
   }
 
   return (
+    <>
+    <Sidebar />
     <div className="project">
       <div className={styles.addemp}>
         <div className={"card shadow " + styles.cardSetup}>
@@ -94,5 +101,6 @@ export const AddProject = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

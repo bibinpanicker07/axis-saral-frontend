@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./employee.module.css";
 import { useState } from "react";
 import axios from "axios";
+import Sidebar from "../../components/adminSidebar/Sidebar";
 
 
 export const EditStakeHolder = () => {
@@ -13,6 +14,10 @@ return (
 };
 
 export const AddStakeHolder = () => {
+	let token =localStorage.getItem("token");
+	const config = {
+	  headers: { Authorization: `Bearer ${token}` },
+	};
 	const [state, setState] = useState({
 		file:""
 	  }
@@ -34,7 +39,7 @@ export const AddStakeHolder = () => {
 	  formdata.append('userId',stakeholder.email)
 		// console.log(employee);
 		e.preventDefault();
-		axios.post(`http://localhost:8080/stakeHolder/add`, stakeholder)
+		axios.post(`http://localhost:8080/stakeHolder/add`, stakeholder,config)
 		  .then(() => {
 			  axios({
 				url: 'http://localhost:8080/stakeholder/profile-image/add',
@@ -54,6 +59,8 @@ export const AddStakeHolder = () => {
 	  
 	}
 return (
+	<>
+	<Sidebar />
 	<div className="stakeholder">
 	<div className={styles.addemp}>
 	  <div className={"card shadow " + styles.cardSetup}>
@@ -211,5 +218,6 @@ return (
 	  </div>
 	</div>
 	</div>
+	</>
 );
 };

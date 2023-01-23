@@ -1,6 +1,9 @@
+import Sidebar from "../../components/employeeSidebar/Sidebar";
 import styles from "./IMPolicy.module.css"
 function IMPolicy(){
     return(
+        <>
+        <Sidebar />
         <div className={styles.imp}>
         <h1>Incident Management Policy</h1>
         <p>The purpose of the incident management policy is to provide organization-wide guidance to employees on the proper response to, and efficient and timely reporting of, computer security-related incidents, such as computer viruses, unauthorized user activity, and suspected compromise of data. It also addresses non-IT incidents such as power failure. 
@@ -15,6 +18,7 @@ function IMPolicy(){
         <p>The Incident Management Policy document shall be considered as “confidential” and shall be made available to the concerned persons with proper access control. 
             Subsequent changes and versions of this document shall be controlled.</p>
         </div>
+        </>
     )
 }
 

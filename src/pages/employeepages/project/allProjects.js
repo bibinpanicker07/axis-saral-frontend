@@ -3,16 +3,23 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./allProjects.module.css"
+import Sidebar from "../../../components/employeeSidebar/Sidebar";
 function AllProjects() {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/allprojects").then((response) => {
+    axios.get("http://localhost:8080/allprojects",config).then((response) => {
       setProjects(response.data);
     });
   }, []);
 
   return (
+    <>
+    <Sidebar />
     <div className={styles.allprojects}>
       <div className="container ">
       <div
@@ -42,6 +49,7 @@ function AllProjects() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

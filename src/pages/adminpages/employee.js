@@ -2,11 +2,16 @@ import React from "react";
 import styles from "./employee.module.css";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import Sidebar from "../../components/adminSidebar/Sidebar";
 export const EditEmployee = () => {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [employeeData, setEmployeeData]=useState([]);
      
   useEffect(()=>{
-      axios.get("http://localhost:8080/employees").then((response)=>{
+      axios.get("http://localhost:8080/employees",config).then((response)=>{
           // console.log(response);
           setEmployeeData(response.data);
           console.log("data",employeeData);      
@@ -32,6 +37,10 @@ export const EditEmployee = () => {
 
 
 export const AddEmployee = () => {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [state, setState] = useState({
     file:""
   }
@@ -58,7 +67,7 @@ export const AddEmployee = () => {
 	console.log(employee);
     e.preventDefault();
     axios
-      .post(`http://localhost:8080/employee/addemployee`, employee)
+      .post(`http://localhost:8080/employee/addemployee`, employee,config)
       .then(() => {
         if(employee.designation == "Manager" || employee.designation == "MANAGER" || employee.designation == "manager"){
           axios({
@@ -91,6 +100,8 @@ function handleFile(e){
   
 }
   return (
+    <>
+    <Sidebar />
     <div className="employee">
       <div className={styles.addemp}>
         <div className={"card shadow " + styles.cardSetup}>
@@ -291,5 +302,6 @@ function handleFile(e){
         </div>
       </div>
     </div>
+    </>
   );
 };

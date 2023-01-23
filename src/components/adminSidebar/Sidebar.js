@@ -6,7 +6,6 @@ import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
-
 const Nav = styled.div`
 // background: #15171c;
 background: #97144d;
@@ -54,13 +53,13 @@ return (
 	<>
 	<IconContext.Provider value={{ color: "#fff" }}>
 		<Nav>
-
+		{/* <img src="../../images/axissaral" ></img> */}
 		<h1
 			style={{ textAlign: "center",
 					marginLeft: "200px",
 					color: "white" }}
 		>
-			Axis Saralaaa
+			Axis Saral
 		</h1>
 		</Nav>
 

@@ -5,7 +5,7 @@ import * as FaIcons from "react-icons/fa";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
-
+import axisaral from"../../images/axisaral.png";
 
 const Nav = styled.div`
 // background: #15171c;
@@ -57,14 +57,16 @@ return (
 	<>
 	<IconContext.Provider value={{ color: "#fff" }}>
 		<Nav>
-
-		<h1
+<img src={axisaral} style={{ textAlign: "center",
+					marginLeft: "10%",
+					color: "white" }}></img>
+		{/* <h1
 			style={{ textAlign: "center",
-					marginLeft: "200px",
+					marginLeft: "15%",
 					color: "white" }}
 		>
 			Axis Saral
-		</h1>
+		</h1> */}
 		</Nav>
 
 

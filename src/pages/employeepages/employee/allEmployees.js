@@ -5,62 +5,69 @@ import { useState, useEffect } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import styles from "./allEmployees.module.css";
+import Sidebar from "../../../components/employeeSidebar/Sidebar";
 function AllEmployees() {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
   const [emp, setEmp] = useState([]);
   const [user, setUser] = useState("employee");
 
-
   const handleChange = (e) => {
-    axios.get(`http://localhost:8080/${e.target.value}`).then((response) => {
+    axios.get(`http://localhost:8080/${e.target.value}`,config).then((response) => {
       setUser(e.target.value);
       setEmp(response.data);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/employee").then((response) => {
+    axios.get("http://localhost:8080/employee",config).then((response) => {
       setEmp(response.data);
     });
   }, []);
   return (
-    <div className={styles.all}>
-      <div className="container ">
-        <ToggleButtonGroup
-          className={styles.toggle}
-          color="primary"
-          exclusive
-          onChange={handleChange}
-          aria-label="Platform"
-        >
-          <ToggleButton value="employee">Employees</ToggleButton>
-          <ToggleButton value="manager">Managers</ToggleButton>
-        </ToggleButtonGroup>
-        <div class="row">
-          {emp?.map((item, index) => {
-            return (
-              <div class="col-12  col-md-4">
-                <Link
-                  style={{ textDecoration: "none", color: "#15171c" }}
-                  to={`/${user}/${item.id}`}
-                  key={index}
-                >
-                  <div
-                    class={"card text-center  m-5 p-5 shadow " + styles.cards}
-                    style={{ backgroundColor: "whitesmoke" }}
+    <>
+      <Sidebar />
+      <div className={styles.all}>
+        <div className="container ">
+          <ToggleButtonGroup
+            className={styles.toggle}
+            color="primary"
+            exclusive
+            onChange={handleChange}
+            aria-label="Platform"
+          >
+            <ToggleButton value="employee">Employees</ToggleButton>
+            <ToggleButton value="manager">Managers</ToggleButton>
+          </ToggleButtonGroup>
+          <div class="row">
+            {emp?.map((item, index) => {
+              return (
+                <div class="col-12  col-md-4">
+                  <Link
+                    style={{ textDecoration: "none", color: "#15171c" }}
+                    to={`/${user}/${item.id}`}
+                    key={index}
                   >
-                    <div class="card-body">
-                      <h5 class="card-title ">{item.firstName}</h5>
-                      <p>ID : {item.id}</p>
+                    <div
+                      class={"card text-center  m-5 p-5 shadow " + styles.cards}
+                      style={{ backgroundColor: "whitesmoke" }}
+                    >
+                      <div class="card-body">
+                        <h5 class="card-title ">{item.firstName}</h5>
+                        <p>ID : {item.id}</p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* <div className={styles.allemp}>
+        {/* <div className={styles.allemp}>
             {emp.map((item, index) => {
               return (
                 <div className={"col-12 " + styles.card} key={index}>
@@ -103,7 +110,8 @@ function AllEmployees() {
               );
             })}
           </div> */}
-    </div>
+      </div>
+    </>
   );
 }
 

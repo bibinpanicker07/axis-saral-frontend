@@ -16,11 +16,16 @@ import AllEmployees from "./pages/employeepages/employee/allEmployees";
 import EmployeeProfile from "./pages/employeepages/employee/employeeProfile";
 import NewsFeed from "./pages/employeepages/newsfeed/NewsFeed";
 import Project from "./pages/employeepages/project/Project";
+import Login from "./pages/login"
 function App() {
   return (
+    
     <Router>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Routes>
+        {/* <Route path="/" element={<Login />}></Route> */}
+                
+        <Route path ="/" element={<Login/>}></Route>
         <Route path ="/products" element={<Products/>}></Route>
         <Route path="/bcp" element={<BCP />}></Route>
         <Route path="/csp" element={<CyberSecurityPolicy />}></Route>
@@ -28,20 +33,24 @@ function App() {
         <Route path="/:user/:id" element={<EmployeeProfile />}></Route>
         <Route path="/:id" element={<Project />}></Route>
 
-        <Route path="/edit/announcements" element={<EditAnnouncements />} />
-        <Route path="/edit/newsfeed" element={<EditNewsFeed />} />
-        <Route path="/edit/employee" element={<EditEmployee />} />
-        <Route path="/add/employee" element={<AddEmployee />} />
-        <Route path="/edit/stakeholder" element={<EditStakeHolder />} />
-        <Route path="/add/stakeholder" element={<AddStakeHolder />} />
-        <Route path="/add/project" element={<AddProject />} />
-        <Route path="/add/module" element={<AddModule />} />
-        <Route path="/edit/project" element={<EditProject />} />
-
-
         <Route path="/newsfeed" element={<NewsFeed />} />
         <Route path="/projects" element={<AllProjects />} />
         <Route path="/employees" element={<AllEmployees />} />
+
+
+
+        {/* <Route path="/edit/announcements" element={<EditAnnouncements />} /> */}
+        {/* <Route path="/edit/newsfeed" element={<EditNewsFeed />} /> */}
+        {/* <Route path="/edit/employee" element={<EditEmployee />} /> */}
+        <Route path="/add/employee" element={<AddEmployee />} />
+        {/* <Route path="/edit/stakeholder" element={<EditStakeHolder />} /> */}
+        <Route path="/add/stakeholder" element={<AddStakeHolder />} />
+        <Route path="/add/project" element={<AddProject />} />
+        <Route path="/add/module" element={<AddModule />} />
+        {/* <Route path="/edit/project" element={<EditProject />} /> */}
+
+
+
       </Routes>
     </Router>
   );

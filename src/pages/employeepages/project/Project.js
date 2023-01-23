@@ -13,19 +13,26 @@ import {
 } from "react-icons/fa";
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
+import Sidebar from "../../../components/employeeSidebar/Sidebar";
 function Project() {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [project, setProject] = useState([]);
   useEffect(() => {
     const setID = params.id;
-    axios.get(`http://localhost:8080/project/ ${setID}`).then((response) => {
+    axios.get(`http://localhost:8080/project/ ${setID}`,config).then((response) => {
       setProject(response.data);
       console.log(response.data);
     });
   }, []);
 
   return (
+    <>
+    <Sidebar />
     <div className={styles.project}>
       <div className="card mb-5">
         <div className={styles.heading} style={{ textAlign: "center" }}>
@@ -185,6 +192,7 @@ function Project() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

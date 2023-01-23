@@ -4,19 +4,24 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Sidebar from "../../../components/employeeSidebar/Sidebar";
 
 function EmployeeProfile() {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const params = useParams();
   const [emp, setEmp] = useState([]);
   useEffect(() => {
     const setID = params.id;
     if(params.user === "employee"){
-    axios.get(`http://localhost:8080/employee/ ${setID}`).then((response) => {
+    axios.get(`http://localhost:8080/employee/ ${setID}`,config).then((response) => {
       setEmp(response.data);
     
     });}
     else{
-      axios.get(`http://localhost:8080/manager/ ${setID}`).then((response) => {
+      axios.get(`http://localhost:8080/manager/ ${setID}`,config).then((response) => {
         setEmp(response.data);
       
       });
@@ -26,6 +31,8 @@ function EmployeeProfile() {
   }, []);
 
   return (
+    <>
+    <Sidebar />
     <div className={styles.profile}>
      
         <div className={"card "}>
@@ -68,6 +75,7 @@ function EmployeeProfile() {
         </div>
      
     </div>
+    </>
   );
 }
 

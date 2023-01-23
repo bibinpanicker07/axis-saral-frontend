@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./employee.module.css"
 import { useState } from "react";
 import axios from "axios";
+import Sidebar from "../../components/adminSidebar/Sidebar";
 export const AddModule = () => {
+  let token =localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   const [module, setModule] = useState({
     moduleName: "",
     projectName: ""
@@ -11,7 +16,7 @@ export const AddModule = () => {
   function addModule(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8080/module/add`, module)
+      .post(`http://localhost:8080/module/add`, module,config)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)
@@ -23,6 +28,8 @@ export const AddModule = () => {
   }
 
     return (
+      <>
+      <Sidebar />
       <div className="module">
         <div className={styles.addemp}>
           <div className={"card shadow " + styles.cardSetup}>
@@ -96,5 +103,6 @@ export const AddModule = () => {
           </div>
         </div>
       </div>
+      </>
     );
   };

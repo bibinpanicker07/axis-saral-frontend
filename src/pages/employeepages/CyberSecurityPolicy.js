@@ -1,7 +1,10 @@
 
+import Sidebar from "../../components/employeeSidebar/Sidebar";
 import styles from "./CyberSecurityPolicy.module.css"
 function CyberSecurityPolicy(){
     return(
+        <>
+        <Sidebar />
         <div className={styles.csp}>
         
         <h1>Cyber Security Policy</h1>
@@ -33,6 +36,7 @@ Don’t download or upload inappropriate, illegal or obscene material using our 
 Work-related use. You can use your corporate email for work-related purposes without limitations. For example, you can sign up for newsletters and online services that will help you in your job or professional growth.
 Personal use. You can use your email for personal reasons as long as you keep it safe, and avoid spamming and disclosing confidential information. For example, you can send emails to friends and family and download ebooks, guides and other safe content for your personal use.</p>
         </div>
+        </>
     );
 }
 
