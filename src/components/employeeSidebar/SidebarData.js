@@ -60,4 +60,5 @@ export const SidebarData = [
 	iconOpened: <RiIcons.RiArrowUpSFill />,
 
 },
+
 ];

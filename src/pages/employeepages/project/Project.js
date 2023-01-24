@@ -15,6 +15,7 @@ import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
 import Sidebar from "../../../components/employeeSidebar/Sidebar";
 function Project() {
+  const [isLoading, setIsLoading] = useState(true);
   let token =localStorage.getItem("token");
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -25,11 +26,14 @@ function Project() {
   useEffect(() => {
     const setID = params.id;
     axios.get(`http://localhost:8080/project/ ${setID}`,config).then((response) => {
+      setIsLoading(false);
       setProject(response.data);
       console.log(response.data);
+
+      console.log(isLoading);
     });
   }, []);
-
+  if (!isLoading) {
   return (
     <>
     <Sidebar />
@@ -65,8 +69,8 @@ function Project() {
             </button>
           </p>
           <div class="collapse" id="collapseExample">
-            {/* <img className={styles.img} src={project.flowChart}></img> */}
-            <img  src={project.flowChart}></img>
+            <img className={styles.img} src={project.flowChart}></img>
+            {/* <img  src={project.flowChart}></img> */}
           </div>
 
           <hr />
@@ -194,6 +198,7 @@ function Project() {
     </div>
     </>
   );
+        }
 }
 
 export default Project;

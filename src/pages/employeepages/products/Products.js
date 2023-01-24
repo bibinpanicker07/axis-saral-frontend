@@ -1,11 +1,11 @@
-import account from '../../images/accounts1.png'
-import deposit from '../../images/deposit.png'
-import cards from '../../images/cards.png'
-import invest from '../../images/investment.png'
-import insurance from '../../images/insurance.png'
-import loan from '../../images/loan.png'
+import account from '../../../images/accounts1.png'
+import deposit from '../../../images/deposit.png'
+import cards from '../../../images/cards.png'
+import invest from '../../../images/investment.png'
+import insurance from '../../../images/insurance.png'
+import loan from '../../../images/loan.png'
 import styles from './products.module.css'
-import Sidebar from '../../components/employeeSidebar/Sidebar'
+import Sidebar from '../../../components/employeeSidebar/Sidebar'
 function Products(){
 
 

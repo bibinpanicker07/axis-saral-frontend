@@ -5,39 +5,42 @@ import * as FaIcons from "react-icons/fa";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
-
+import axisaral from "../../images/axisaral.png";
 const Nav = styled.div`
-// background: #15171c;
-background: #97144d;
-height: 80px;
-top:0;
-display: flex;
-justify-content: flex-start;
-align-items: center;
+  // background: #15171c;
+  background: #97144d;
+  height: 10%;
+  top: 0;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const NavIcon = styled(Link)`
-margin-left: 2rem;
-font-size: 2rem;
-height: 80px;
-display: flex;
-justify-content: flex-start;
-align-items: center;
+  margin-left: 2rem;
+  font-size: 2rem;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const SidebarNav = styled.nav`
-background: #15171c;
-// background:#00000008;
-// width: 250px;
-width:16%;
-height: 100%;
-display: flex;
-justify-content: center;
-position: fixed;
-top: ;
-left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-transition: 350ms;
-z-index: 10;
+  background: #15171c;
+  // background:#00000008;
+  // width: 250px;
+  width: 16%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 10%;
+  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  transition: 350ms;
+  z-index: 10;
 `;
 
 const SidebarWrap = styled.div`
@@ -54,13 +57,10 @@ return (
 	<IconContext.Provider value={{ color: "#fff" }}>
 		<Nav>
 		{/* <img src="../../images/axissaral" ></img> */}
-		<h1
-			style={{ textAlign: "center",
-					marginLeft: "200px",
-					color: "white" }}
-		>
-			Axis Saral
-		</h1>
+		<img
+            src={axisaral}
+            style={{ textAlign: "center", marginLeft: "10%", color: "white" }}
+          ></img>
 		</Nav>
 
 
