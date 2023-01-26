@@ -20,29 +20,29 @@ export const SidebarData = [
 },
 {
 	title: "Company Policies",
-	// path: "/events",
+	path: "/allPolicies",
 	icon: <FaIcons.FaTasks />,
 
 	iconClosed: <RiIcons.RiArrowDownSFill />,
 	iconOpened: <RiIcons.RiArrowUpSFill />,
 
-	subNav: [
-	{
-		title: "Business Conduct ",
-		path: "/bcp",
-		icon: <IoIcons.IoIosPaper />,
-	},
-	{
-		title: "Cyber Security ",
-		path: "/csp",
-		icon: <IoIcons.IoIosPaper />,
-	},
-	{
-		title: "Incident Management ",
-		path: "/imp",
-		icon: <IoIcons.IoIosPaper />,
-	},
-	],
+	// subNav: [
+	// {
+	// 	title: "Business Conduct ",
+	// 	path: "/bcp",
+	// 	icon: <IoIcons.IoIosPaper />,
+	// },
+	// {
+	// 	title: "Cyber Security ",
+	// 	path: "/csp",
+	// 	icon: <IoIcons.IoIosPaper />,
+	// },
+	// {
+	// 	title: "Incident Management ",
+	// 	path: "/imp",
+	// 	icon: <IoIcons.IoIosPaper />,
+	// },
+	// ],
 },
 {
 	title: "Live Projects",

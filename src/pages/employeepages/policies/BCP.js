@@ -27,7 +27,7 @@ function BCP(){
         <Sidebar />
         <div className={styles.bcp}>
         <iframe
-                            src={`data:application/pdf;base64,${document}#toolbar=0`}
+                            src={`data:application/pdf;base64,${document}`}
                             title={document['fileName']}
                             width='100%'
                             height='100%'

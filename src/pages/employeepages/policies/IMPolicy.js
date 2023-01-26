@@ -8,7 +8,7 @@ function IMPolicy(){
     const [document, setDocument] = useState();
     useEffect(() => {
 
-        axios.get('http://localhost:8080/document/1',config)
+        axios.get('http://localhost:8080/document/3',config)
             .then((response) => {
                 console.log(response.data);
                 setDocument(response.data);

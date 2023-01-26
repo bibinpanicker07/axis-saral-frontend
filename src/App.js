@@ -19,6 +19,7 @@ import Project from "./pages/employeepages/project/Project";
 import Login from "./pages/login/login"
 import YourProfile from "./pages/employeepages/yourProfile/YourProfile";
 import ProtectedRoutes from "./InProtectedRoutes";
+import AllPolicies from "./pages/employeepages/policies/AllPolicies";
 function App() {
   
  
@@ -37,6 +38,11 @@ function App() {
         <Route path="/bcp" element={<BCP />}></Route>
         <Route path="/csp" element={<CyberSecurityPolicy />}></Route>
         <Route path="/imp" element={<IMPolicy />}></Route>
+        <Route path="/allPolicies" element={<AllPolicies />} />
+
+
+
+
         <Route path="/:user/:id" element={<EmployeeProfile />}></Route>
         <Route path="/:id" element={<Project />}></Route>
 
