@@ -79,7 +79,7 @@ function Project() {
             Holders
           </div>
           <div>
-            {project?.stakeHolders?.map((item, index) => {
+            {project?.modules?.map((item, index) => {
               return (
                 <Link
                   style={{ textDecoration: "none", color: "black" }}
@@ -93,8 +93,8 @@ function Project() {
                         <FaUserCircle />
                       </div>
                       <div className={styles.shname}>
-                        {item.firstName} {item.lastName}
-                        <p style={{ fontSize: "15px" }}>{item.designation}</p>
+                        {item.manager.dvp.firstName} {item.manager.dvp.lastName}
+                        <p style={{ fontSize: "15px" }}>{item.manager.dvp.designation}</p>
                       </div>
                     </div>
                   </div>

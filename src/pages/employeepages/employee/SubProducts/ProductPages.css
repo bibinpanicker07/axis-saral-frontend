@@ -1,0 +1,43 @@
+.display-cont{
+  height: 10%;
+}
+
+.Banner-image{
+  margin-bottom:50px;
+  margin-left: 255px;
+  margin-top: 0.4%;
+  text-align: center;
+}
+
+.small-cont{
+  padding: 1%;
+  margin:10px 0;
+  margin-top: -2.5%;
+  top: -100%;
+  margin-left: -35%;
+  text-align: center;
+  border-radius: 1%;
+  border-color: black;
+}
+
+.small-cont2{
+  padding: 1%;
+  margin:10px 0;
+  margin-top: -18.4%;
+  top: -100%;
+  margin-left: 19%;
+  text-align: center;
+  border-radius: 1%;
+  border-color: black;
+}
+
+.small-cont3{
+  padding: 1%;
+  margin:10px 0;
+  margin-top: -18.5%;
+  top: -100%;
+  margin-left: 70%;
+  text-align: center;
+  border-radius: 1%;
+  border-color: black;
+}
