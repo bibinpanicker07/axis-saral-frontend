@@ -44,13 +44,15 @@ function AllEmployees() {
           </ToggleButtonGroup>
           <div class="row">
             {emp?.map((item, index) => {
-              return (
+
+              return (<>
+                setUser("employees")
                 <div class="col-12  col-md-4">
                   <Link
                     style={{ textDecoration: "none", color: "#15171c" }}
                     to={`/${user}/${item.id}`}
                     key={index}
-                  >
+                  >        
                     <div
                       class={"card text-center  m-5 p-5 shadow " + styles.cards}
                       style={{ backgroundColor: "whitesmoke" }}
@@ -62,7 +64,7 @@ function AllEmployees() {
                     </div>
                   </Link>
                 </div>
-              );
+                </>);
             })}
           </div>
         </div>

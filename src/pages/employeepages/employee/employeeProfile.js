@@ -15,19 +15,14 @@ function EmployeeProfile() {
   const [emp, setEmp] = useState([]);
   useEffect(() => {
     const setID = params.id;
-    if(params.user === "employee"){
-    axios.get(`http://localhost:8080/employee/ ${setID}`,config).then((response) => {
-      setEmp(response.data);
     
-    });}
-    else{
-      axios.get(`http://localhost:8080/manager/ ${setID}`,config).then((response) => {
+      axios.get(`http://localhost:8080/${params.user}/${setID}`,config).then((response) => {
         setEmp(response.data);
       
       });
 
 
-    }
+  
   }, []);
 
   return (
@@ -51,13 +46,26 @@ function EmployeeProfile() {
             <div className={styles.colon}>:</div>
             <div className={styles.eid}>{emp.designation}</div>
 
+
+            {emp.designation !== "Senior Vice President" &&<>
+            <div className={styles.id}>Reporting Manager</div>
+            <div className={styles.colon}>:</div>
+            <div className={styles.eid}>{emp?.manager?.firstName} {emp?.manager?.lastName}          
+            {emp?.dvp?.firstName} {emp?.dvp?.lastName}
+            {emp?.svp?.firstName} {emp?.svp?.lastName}
+            </div>
+            </>
+}
+
+{emp?.projectName &&<>
             <div className={styles.id}>Project</div>
             <div className={styles.colon}>:</div>
             <div className={styles.eid}>{emp.projectName}</div>
-
-            <div className={styles.id}>Joined on </div>
+            </>
+}
+            <div className={styles.id}>Branch Name </div>
             <div className={styles.colon}>:</div>
-            <div className={styles.eid}>{emp.dateOfJoining}</div>
+            <div className={styles.eid}>{emp.branchName}</div>
 
             <div className={styles.id}>gender</div>
             <div className={styles.colon}>:</div>
@@ -70,6 +78,14 @@ function EmployeeProfile() {
             <div className={styles.id}>Email</div>
             <div className={styles.colon}>:</div>
             <div className={styles.eid}>{emp.username}</div>
+
+            <div className={styles.id}>City </div>
+            <div className={styles.colon}>:</div>
+            <div className={styles.eid}>{emp.city}</div>
+
+            <div className={styles.id}>State </div>
+            <div className={styles.colon}>:</div>
+            <div className={styles.eid}>{emp.state}</div>
           
           </div>
         </div>

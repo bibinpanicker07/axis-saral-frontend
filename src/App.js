@@ -8,9 +8,7 @@ import { AddStakeHolder, EditStakeHolder } from "./pages/adminpages/stakeholder"
 import { EditNewsFeed } from "./pages/adminpages/newsFeed";
 import { AddModule } from "./pages/adminpages/module";
 import AllProjects from "./pages/employeepages/project/allProjects";
-import BCP from "./pages/employeepages/policies/BCP";
-import IMPolicy from "./pages/employeepages/policies/IMPolicy";
-import CyberSecurityPolicy from "./pages/employeepages/policies/CyberSecurityPolicy";
+
 import Products from "./pages/employeepages/products/Products";
 import AllEmployees from "./pages/employeepages/employee/allEmployees";
 import EmployeeProfile from "./pages/employeepages/employee/employeeProfile";
@@ -20,6 +18,7 @@ import Login from "./pages/login/login"
 import YourProfile from "./pages/employeepages/yourProfile/YourProfile";
 import ProtectedRoutes from "./InProtectedRoutes";
 import AllPolicies from "./pages/employeepages/policies/AllPolicies";
+import DepartmentList from "./pages/employeepages/employee/departmentList";
 function App() {
   
  
@@ -35,9 +34,6 @@ function App() {
 
         <Route element={<ProtectedRoutes />}>
         <Route path ="/products" element={<Products/>}></Route>
-        <Route path="/bcp" element={<BCP />}></Route>
-        <Route path="/csp" element={<CyberSecurityPolicy />}></Route>
-        <Route path="/imp" element={<IMPolicy />}></Route>
         <Route path="/allPolicies" element={<AllPolicies />} />
 
 
@@ -48,7 +44,7 @@ function App() {
 
         <Route path="/newsfeed" element={<NewsFeed />} />
         <Route path="/projects" element={<AllProjects />} />
-        <Route path="/employees" element={<AllEmployees />} />
+        <Route path="/employees" element={<DepartmentList />} />
 
         <Route path="/yourprofile" element={<YourProfile />} />
 
