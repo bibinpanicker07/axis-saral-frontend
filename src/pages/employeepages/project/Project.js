@@ -75,8 +75,8 @@ function Project() {
 
           <hr />
           <div className={styles.sh}>
-            <FaUserFriends className={styles.shicon}></FaUserFriends>Stake
-            Holders
+            <FaUserFriends className={styles.shicon}></FaUserFriends>
+            Executives
           </div>
           <div>
             {project?.modules?.map((item, index) => {
@@ -132,7 +132,7 @@ function Project() {
                     <hr />
                     <div className={styles.manager}>
                       <FaUser className={styles.managericon}></FaUser>
-                      Manager
+                      Module Owner
                     </div>
                     <div>
                       <Link

@@ -1,9 +1,10 @@
 .deposit-display{
-  margin-top: 5px;
-  width: 81%;
   padding: 0.1%;
   margin: 0.1%;
+  margin-top: 6%;
+  width: 81%;
   height: 108%;
+  transition: 0.3s;
   color: #01010c;
   margin-left: 255px;
   background-image: white; 
@@ -52,11 +53,11 @@
 
 .depositcard2 {
   border-radius: 15px 15px 15px 15px;
-  margin-top: -320px;
+  margin-top: -26%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 21%;
-  margin-left: 420px;
+  margin-left: 41%;
   height: 38%;
   padding: 10px 10px;
   text-align: center;
@@ -86,11 +87,11 @@
 
 .depositcard3 {
   border-radius: 15px 15px 15px 15px;
-  margin-top: -323px;
+  margin-top: -26%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 21%;
-  margin-left: 755px;
+  margin-left: 75%;
   height: 38%;
   padding: 10px 10px;
   text-align: center;

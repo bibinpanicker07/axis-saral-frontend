@@ -16,7 +16,7 @@ export const AddModule = () => {
   function addModule(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8080/module/add`, module,config)
+      .post(`http://localhost:8081/module/add`, module,config)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)

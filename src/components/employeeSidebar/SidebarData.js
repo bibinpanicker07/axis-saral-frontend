@@ -60,5 +60,10 @@ export const SidebarData = [
 	iconOpened: <RiIcons.RiArrowUpSFill />,
 
 },
+{
+	title: "Download Docs",
+	path: "/documents",
+	icon: <FaIcons.FaCloudDownloadAlt />,
+},
 
 ];

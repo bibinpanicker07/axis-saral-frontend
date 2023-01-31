@@ -1,9 +1,10 @@
-.cards{
-  margin-top: 5px;
-  width: 81%;
+.cards11{
   padding: 0.1%;
   margin: 0.1%;
+  margin-top: 6%;
+  width: 81%;
   height: 108%;
+  transition: 0.3s;
   color: #01010c;
   margin-left: 255px;
   background-image: white; 
@@ -17,7 +18,7 @@
 .linkColor{
   color: rgb(0, 10, 2);
 }
-.card {
+.card11 {
   border-radius: 15px 15px 15px 15px;
   margin-top: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -38,11 +39,11 @@
   text-decoration-color: #ededf0;
 }
 
-.card:hover {
+.card11:hover {
   box-shadow: 0 18px 26px 0 rgba(0,0,0,0.2);
 }
 
-.container {
+.container11 {
   padding: 2px 16px;
   text-align: center;
   color: #97144d;

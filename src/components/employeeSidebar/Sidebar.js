@@ -92,7 +92,7 @@ const Sidebar = () => {
             >
               {emp}
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style={{ textDecoration:"none"}}>
               <li>
                 <a class="dropdown-item" href="/yourprofile">
                   Your Profile
@@ -101,7 +101,7 @@ const Sidebar = () => {
 			  <hr class="dropdown-divider"/>
               <li>
                 <a class="dropdown-item" onClick={logout}>
-                 Log Out
+                 Logout
                 </a>
               </li>
               {/* <li><hr class="dropdown-divider"></li> */}

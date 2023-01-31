@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
@@ -6,6 +6,7 @@ import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 import axisaral from "../../images/axisaral.png";
+import axios from "axios";
 const Nav = styled.div`
   // background: #15171c;
   background: #97144d;
@@ -48,9 +49,24 @@ width: 100%;
 `;
 
 const Sidebar = () => {
-const [sidebar, setSidebar] = useState(true);
+  let token =localStorage.getItem("token");
+	const config = {
+	  headers: { Authorization: `Bearer ${token}` },
+	};
+	const [emp, setEmp] = useState();
+  const [sidebar, setSidebar] = useState(true);
+  const showSidebar = () => setSidebar(sidebar);
 
-const showSidebar = () => setSidebar(sidebar);
+  useEffect(() => {
+    axios.get("http://localhost:8080/employee/",config).then((response) => {
+		console.log(response.data)
+      setEmp(response.data.firstName);
+    });
+  }, []);
+  const logout = () => {  localStorage.clear();
+    window.location.href = '/';
+  };
+
 
 return (
 	<>
@@ -61,6 +77,38 @@ return (
             src={axisaral}
             style={{ textAlign: "center", marginLeft: "10%", color: "white" }}
           ></img>
+          <FaIcons.FaUserCircle
+            style={{ marginLeft: "50%", color: "white", fontSize: "300%" }}
+          ></FaIcons.FaUserCircle>
+          <div
+            class="nav-item dropdown"
+            style={{ textAlign: "center", marginLeft: "1%", color: "white" ,fontSize: "125%"}}
+          >
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {emp}
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/yourprofile">
+                  Your Profile
+                </a>
+              </li>
+			        <hr class="dropdown-divider"/>
+              <li>
+                <a class="dropdown-item" onClick={logout}>
+                 Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+        </div>
 		</Nav>
 
 

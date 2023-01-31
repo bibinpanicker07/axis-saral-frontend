@@ -4,13 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Sidebar from "../../components/adminSidebar/Sidebar";
-export const EditProject = () => {
-  return (
-    <div className="project">
-      <h1>edit</h1>
-    </div>
-  );
-};
+
 
 export const AddProject = () => {
   let token =localStorage.getItem("token");
@@ -21,12 +15,13 @@ export const AddProject = () => {
     projectName: "",
     description: "",
     status: "ongoing",
+    flowChart:""
   });
 
   function addProject(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8080/add`, project,token)
+      .post(`http://localhost:8081/add`, project,token)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)
@@ -82,6 +77,24 @@ export const AddProject = () => {
                     required
                     onChange={(e) =>
                       setProject({ ...project, description: e.target.value })
+                    }
+                  />
+                 
+                </div>
+                <div className="mb-3">
+                  <label for="exampleInputEmail2" className="form-label">
+                    Flowchart
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail2"
+                    value={project.flowChart}
+                    required
+                    height="100px"
+                    width="20px"
+                    onChange={(e) =>
+                      setProject({ ...project, flowChart: e.target.value })
                     }
                   />
                  

@@ -14,46 +14,38 @@ export default function Center() {
     <>
     <Sidebar/>
     <div className='center'>
-    <div> Our Products</div>
+    <div className='heading'>OUR PRODUCTS</div>
     <div>
     <Carousel>
                 <div>
                     <img src={im1} alt="im1" height="400px" width="350px" />
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore Our wide variety of accounts that suits your banking needs.</p>
                     <a href="/Accounts">
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore Our wide variety of accounts that suits your banking needs.</p>
                    </a>
                 </div>
                 
                 <div>
                     <img src={im2} alt="im2" height="375px" width="300px"/>
-                    <p className="legend">we believe your journey should continue without any speed bumps. 
-                    This is why we bring you customized Bank Loans</p>
+                    <p className="legend">Explore our range of loans designed for your unique needs.</p>
                     <a href="./Loan">
-                    <p className="legend">we believe your journey should continue without any speed bumps. 
-                    This is why we bring you customized Bank Loans</p>
+                    <p className="legend">Explore our range of loans designed for your unique needs.</p>
                     </a>
                 </div>
 
                 <div>
                     <img src={im3} alt="im3" height="375px" width="300px"/>
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore All our Deposits that help you progress!</p>
                     <a href="./Deposit" >
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore All our Deposits that help you progress!</p>
                     </a>
                 </div>
 
                 <div>
                     <img src={im4} alt="im3" height="375px" width="300px"/>
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore our range of cards designed for your unique needs.</p>
                     <a href="./Cards" >
-                    <p className="legend">Open Easy Access Digital Savings Account from the comfort of your home.
-                     No branch visits, no paperwork, its instant, digital & rewarding!</p>
+                    <p className="legend">Explore our range of cards designed for your unique needs.</p>
                     </a>
                 </div>
                 

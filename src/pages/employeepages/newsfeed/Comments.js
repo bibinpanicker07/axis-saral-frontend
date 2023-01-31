@@ -80,7 +80,13 @@ function Comment(props) {
                                             {item1?.employee?.firstName} {item1?.employee?.lastName}
                                           </h5>
                                           <h5 className={styles.itemDes}>
-                                            {item1?.manager?.firstName} {item1?.manager?.lastName}
+                                            {item1?.avp?.firstName} {item1?.manager?.lastName}
+                                          </h5>
+                                          <h5 className={styles.itemDes}>
+                                            {item1?.dvp?.firstName} {item1?.manager?.lastName}
+                                          </h5>
+                                          <h5 className={styles.itemDes}>
+                                            {item1?.svp?.firstName} {item1?.manager?.lastName}
                                           </h5>
                                           <p className={styles.itemName}>
                                             {item1?.message}

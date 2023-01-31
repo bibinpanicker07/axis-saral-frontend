@@ -31,7 +31,7 @@ function YourProfile() {
       <Sidebar />
       <div className={styles.yourprofile}>
         <div className={styles.profile}>
-          <div className={"card "} style={{ width: "40rem" }}>
+          <div className={"card "} >
             <img
               src={`http://localhost:8080/${designation}/profile-image/${emp.username}`}
               className={styles.img}
@@ -97,7 +97,7 @@ function YourProfile() {
             </div>
           </div>
         </div>
-        <div className={styles.crd}>
+        {/* <div className={styles.crd}>
           <div class="list-group">
             <div className={styles.download}>
               Download
@@ -285,7 +285,7 @@ function YourProfile() {
               Joining Letter
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

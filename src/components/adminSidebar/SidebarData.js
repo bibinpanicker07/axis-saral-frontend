@@ -7,10 +7,18 @@ import * as RiIcons from "react-icons/ri";
 export const SidebarData = [
 {
 	title: "News",
-	path: "/edit/newsfeed",
+	path: "/admin-newsfeed",
 	icon: <FaIcons.FaEnvelopeOpenText />,
 	iconClosed: <RiIcons.RiArrowDownSFill />,
 	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+	subNav: [
+		{
+			title: "Add News",
+			path: "/edit/newsfeed",
+			icon: <IoIcons.IoIosPaper />,
+		},		
+		],
 
 },
 {
@@ -65,25 +73,5 @@ export const SidebarData = [
 	},
 	],
 },
-{
-	title: "Stakeholder",
-	icon: <FaIcons.FaUserTie />,
-	iconClosed: <RiIcons.RiArrowDownSFill />,
-	iconOpened: <RiIcons.RiArrowUpSFill />,
 
-	subNav: [
-	{
-		title: "Edit Stakeholder",
-		path: "/edit/stakeholder",
-		icon: <IoIcons.IoIosPaper />,
-		cName: "sub-nav",
-	},
-	{
-		title: "Add Stakeholder",
-		path: "/add/stakeholder",
-		icon: <IoIcons.IoIosPaper />,
-		cName: "sub-nav",
-	},
-	],
-},
 ];

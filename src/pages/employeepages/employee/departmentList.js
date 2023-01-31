@@ -66,7 +66,7 @@ function DepartmentList() {
             <div className={styles.heading}>Senior Vice President</div>
             <div className={styles.svp}>
               <Link
-                style={{ textDecoration: "none", color: "#15171c" }}
+                style={{ textDecoration: "none", color: "#15171c" ,textTransform: "capitalize" }}
                 to={`/${user2}/${dept?.svp?.id}`}
               >
                 <div className={styles.names}>
@@ -82,7 +82,7 @@ function DepartmentList() {
             <div className={styles.heading}>Deputy Vice President</div>
             <div className={styles.dvp}>
               <Link
-                style={{ textDecoration: "none", color: "#15171c" }}
+                style={{ textDecoration: "none", color: "#15171c",textTransform: "capitalize" }}
                 to={`/${user1}/${dept?.dvp?.id}`}
               >
                 <div className={styles.names}>
@@ -119,7 +119,7 @@ function DepartmentList() {
                   return (
                     <>
                       <Link
-                        style={{ textDecoration: "none", color: "#15171c" }}
+                        style={{ textDecoration: "none", color: "#15171c" ,textTransform: "capitalize" }}
                         to={`/${user1}/${item1.id}`}
                         key={index}
                       >
@@ -143,7 +143,7 @@ function DepartmentList() {
                   return (
                     <>
                       <Link
-                        style={{ textDecoration: "none", color: "#15171c" }}
+                        style={{ textDecoration: "none", color: "#15171c",textTransform: "capitalize" }}
                         to={`/${user1}/${item1.id}`}
                         key={index}
                       >

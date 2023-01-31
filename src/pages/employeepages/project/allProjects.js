@@ -39,7 +39,7 @@ function AllProjects() {
               >
                 <div class={"card text-center  m-5 p-5 shadow "+ styles.cards}  style={{backgroundColor: "whitesmoke" }}>
                   <div class="card-body">
-                    <h5 class="card-title ">{item.projectName}</h5>
+                    <h5 class="card-title " style={{textTransform: "capitalize" }} >{item.projectName}</h5>
                   </div>
                 </div>
               </Link>
