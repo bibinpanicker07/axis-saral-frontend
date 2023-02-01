@@ -41,6 +41,8 @@ import Documents from "./pages/employeepages/documents/Documents";
 import AdminNewsFeed from "./pages/adminpages/AdminNewsFeed";
 import { EditEmployee } from "./pages/adminpages/EditEmployee";
 import { EditProject } from "./pages/adminpages/EditProject";
+import UpdateEmployee from "./pages/adminpages/UpdateEmployee/UpdateEmployee";
+import { UpdateEmployeeProfile } from "./pages/adminpages/UpdateEmployee/UpdateEmployeeProfile";
 
 
 function App() {
@@ -82,6 +84,7 @@ function App() {
           <Route path="/allPolicies" element={<AllPolicies />} />
 
           <Route path="/:user/:id" element={<EmployeeProfile />}></Route>
+          <Route path="/edit/:user/:id" element={<UpdateEmployee />}></Route>
           <Route path="/:id" element={<Project />}></Route>
 
           <Route path="/newsfeed" element={<NewsFeed />} />
@@ -92,7 +95,7 @@ function App() {
 
           <Route path="/yourprofile" element={<YourProfile />} />
 
-
+          <Route path="/editEmployee/:user/:id" element={<UpdateEmployeeProfile />} />
 
 
 

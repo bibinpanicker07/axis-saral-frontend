@@ -15,13 +15,18 @@ export const Login = (props) => {
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data.token);
+        
         // localStorage.setItem("role", response.data.role);
         // if (response.data.role === "admin") {
         //   navigate("/AdminAllCategories");
         // } else if (response.data.role === "customer") {
         //   navigate("/AllCategories");
         // }
-        navigate("/newsfeed");
+        if (user.username=="admin1@gmail.com"){ 
+          navigate("admin-newsfeed")
+          ;}else{
+            navigate("/newsfeed");}
+        
       })
       .catch((error) => {
         alert("Incorrect Email Id or password ");
