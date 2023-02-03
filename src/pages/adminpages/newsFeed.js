@@ -7,7 +7,10 @@ import styles from "./newsFeed.module.css"
 
 import React, { useState } from 'react';
 import Sidebar from "../../components/adminSidebar/Sidebar";
+
+import { useNavigate } from "react-router-dom";
 export const AddNews = () => {
+	const navigate = useNavigate();
 	let token = localStorage.getItem("token"); 
 	const config = { headers: { Authorization: `Bearer ${token}` }, 
     }; 
@@ -25,11 +28,12 @@ export const AddNews = () => {
 		   console.log(news);  
 		     e.preventDefault();  
 			   axios   
-			      .post(`http://localhost:8081/news/add`, news,config)   
+			      .post(`http://localhost:8080/news/add`, news,config)   
 				     .then(() => {             
 						     
 							alert("News Added Successfully");         
-							window.location.reload(true);      
+							// window.location.reload(true);  
+							    navigate("/admin-newsfeed")
 						})    
 					} 
 				    

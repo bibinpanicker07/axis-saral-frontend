@@ -19,7 +19,7 @@ export const EditProject = () => {
     function editProject(e) {
         e.preventDefault();
         axios
-            .put(`http://localhost:8081/update-project/{projectId}`, project, token)
+            .put(`http://localhost:8080/update-project/{projectId}`, project, token)
             .then((response) => {
                 console.log(response.data.projectName);
                 alert("Project Updated!!")

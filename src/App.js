@@ -41,6 +41,9 @@ import Documents from "./pages/employeepages/documents/Documents";
 import AdminNewsFeed from "./pages/adminpages/AdminNewsFeed";
 import { EditEmployee } from "./pages/adminpages/EditEmployee";
 import { EditProject } from "./pages/adminpages/EditProject";
+import AdminAllPolicies from "./pages/adminpages/policies/AllPolicies";
+import Uploaddocuments from "./pages/adminpages/documents/Uploaddocuments";
+import ViewDepartments from "./pages/adminpages/department/ViewDepartments";
 
 
 function App() {
@@ -107,6 +110,9 @@ function App() {
         <Route path="/add/project" element={<AddProject />} />
         <Route path="/add/module" element={<AddModule />} />
         <Route path="/edit/project" element={<EditProject />} />
+        <Route path="/admin-policies" element={<AdminAllPolicies />} />
+        <Route path="/upload-documents" element={<Uploaddocuments />} />
+        <Route path="/viewdepartments" element={<ViewDepartments />} />
         </Route>
       </Routes>
     </Router>

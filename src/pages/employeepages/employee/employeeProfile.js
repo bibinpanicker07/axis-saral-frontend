@@ -29,7 +29,7 @@ function EmployeeProfile() {
       <div className={styles.profile}>
         <div className={"card "}>
           <img
-            src={`http://localhost:8080/${params.user}/profile-image/${emp.username}`}
+            src={`http://localhost:8080/profile-image/${emp.username}`}
             className={styles.img}
             alt="..."
           />

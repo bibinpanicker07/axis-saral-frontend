@@ -33,7 +33,7 @@ function YourProfile() {
         <div className={styles.profile}>
           <div className={"card "} >
             <img
-              src={`http://localhost:8080/${designation}/profile-image/${emp.username}`}
+              src={`http://localhost:8080/profile-image/${emp.username}`}
               className={styles.img}
               alt=""
             />
@@ -64,7 +64,7 @@ function YourProfile() {
                 </>
               )}
 
-              {emp?.projectName && (
+              {emp?.projectName && emp?.projectName !== " " &&(
                 <>
                   <div className={styles.id}>Project</div>
                   <div className={styles.colon}>:</div>

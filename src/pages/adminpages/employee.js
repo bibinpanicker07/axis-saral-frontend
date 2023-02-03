@@ -376,7 +376,7 @@ const [project, setProject] = useState([{ 'projectName': '', 'id': '' }])
     const [project1, setProject1] = useState([])
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8081/allprojects`);
+            const response = await fetch(`http://localhost:8080/allprojects`);
             const newData = await response.json();
             setProject(newData);
             // console.log(newData);

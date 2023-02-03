@@ -21,7 +21,7 @@ export const AddProject = () => {
   function addProject(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8081/add`, project,token)
+      .post(`http://localhost:8080/add`, project,token)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)

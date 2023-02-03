@@ -103,6 +103,8 @@
     font-size: 45px;
 }
 .toggle{
+    border: #97144d!important;
+    border-radius: calc(var(--height)/2);
     margin-left: 2%;
     margin-top: 5%;
 }

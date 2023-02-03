@@ -41,7 +41,7 @@ export const EditEmployee = () => {
       e.preventDefault();
       const employee = {firstName,lastName,gender,username,password,mobileNumber,designation,projectName,moduleName};
       console.log(employee);
-      axios.put(`http://localhost:8081/update-employee/${id}`, employee).then((response) => {
+      axios.put(`http://localhost:8080/update-employee/${id}`, employee).then((response) => {
           console.log(response);
           alert("Employee Updated");
           window.location.reload("true");
@@ -75,7 +75,7 @@ export const EditEmployee = () => {
       const [project1, setProject1] = useState([])
       useEffect(() => {
           const fetchData = async () => {
-              const response = await fetch(`http://localhost:8081/allprojects`);
+              const response = await fetch(`http://localhost:8080/allprojects`);
               const newData = await response.json();
               setProject1(newData);
               // console.log(newData);
@@ -91,7 +91,7 @@ export const EditEmployee = () => {
       const [module1, setModule1] = useState([])
       useEffect(() => {
           const fetchData = async () => {
-              const response = await fetch(`http://localhost:8081/module/module`);
+              const response = await fetch(`http://localhost:8080/module/module`);
               const newData = await response.json();
               setModule1(newData);
               // console.log(newData);

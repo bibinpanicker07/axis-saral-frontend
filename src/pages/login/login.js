@@ -21,7 +21,10 @@ export const Login = (props) => {
         // } else if (response.data.role === "customer") {
         //   navigate("/AllCategories");
         // }
-        navigate("/newsfeed");
+        if(user.username === "admin@gmail.com"){
+          navigate("/admin-newsfeed")
+        }else
+          navigate("/newsfeed");
       })
       .catch((error) => {
         alert("Incorrect Email Id or password ");

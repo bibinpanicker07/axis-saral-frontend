@@ -94,12 +94,12 @@ return (
               {emp}
             </a>
             <ul class="dropdown-menu">
-              <li>
+              {/* <li>
                 <a class="dropdown-item" href="/yourprofile">
                   Your Profile
                 </a>
               </li>
-			        <hr class="dropdown-divider"/>
+			        <hr class="dropdown-divider"/> */}
               <li>
                 <a class="dropdown-item" onClick={logout}>
                  Logout

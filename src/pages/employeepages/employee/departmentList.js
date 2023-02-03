@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { FaSearch, FaUserCircle } from "react-icons/fa";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { Button } from "react-bootstrap";
 function DepartmentList() {
   const [user, setUser] = useState("employee");
   var user2 = "Senior Vice President";
@@ -44,7 +43,7 @@ function DepartmentList() {
           <div className={styles.department}> DEPARTMENTS</div>
           <ToggleButtonGroup
             className={styles.toggle}
-            color="primary"
+            color="secondary"
             orientation="vertical"
             exclusive
             onChange={handleChange}
@@ -53,7 +52,7 @@ function DepartmentList() {
             {dept1?.map((item, index) => {
               user1 = "Deputy Vice President";
               return (
-                <ToggleButton value={item.departmentId}>
+                <ToggleButton  value={item.departmentId} >
                   {item.departmentName}
                 </ToggleButton>
               );

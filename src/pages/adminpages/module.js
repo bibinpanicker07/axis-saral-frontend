@@ -10,13 +10,14 @@ export const AddModule = () => {
   };
   const [module, setModule] = useState({
     moduleName: "",
-    projectName: ""
+    projectName: "",
+    description:""
   });
 
   function addModule(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:8081/module/add`, module,config)
+      .post(`http://localhost:8080/module/add`, module,config)
       .then((response) => {
         alert(response.data);
 		window.location.reload(true)
@@ -88,6 +89,21 @@ export const AddModule = () => {
                     </select>
                     
                   </div> */}
+                   <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">
+                      description
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      value={module.description}
+                      required
+                        onChange={(e) =>
+                      	setModule({ ...module, description: e.target.value })
+                        }
+                    />
+                  </div>
                   <button
                     type="submit"
                     class="btn btn-danger"

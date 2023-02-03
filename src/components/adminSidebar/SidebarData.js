@@ -27,6 +27,13 @@ export const SidebarData = [
 	icon: <FaIcons.FaPhone />,
 },
 {
+	title: "Departments",
+	path: "/viewdepartments",
+	icon: <FaIcons.FaLayerGroup />,
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+},
+{
 	title: "Project",
 	// path: "/events",
 	icon: <FaIcons.FaTasks />,
@@ -45,11 +52,11 @@ export const SidebarData = [
 		path: "/add/module",
 		icon: <IoIcons.IoIosPaper />,
 	},
-	{
-		title: "Edit Project",
-		path: "/edit/project",
-		icon: <IoIcons.IoIosPaper />,
-	},
+	// {
+	// 	title: "Edit Project",
+	// 	path: "/edit/project",
+	// 	icon: <IoIcons.IoIosPaper />,
+	// },
 	],
 },
 {
@@ -59,12 +66,12 @@ export const SidebarData = [
 	iconOpened: <RiIcons.RiArrowUpSFill />,
 
 	subNav: [
-	{
-		title: "Edit Employees",
-		path: "/edit/employee",
-		icon: <IoIcons.IoIosPaper />,
-		cName: "sub-nav",
-	},
+	// {
+	// 	title: "Edit Employees",
+	// 	path: "/edit/employee",
+	// 	icon: <IoIcons.IoIosPaper />,
+	// 	cName: "sub-nav",
+	// },
 	{
 		title: "Add Employee",
 		path: "/add/employee",
@@ -72,6 +79,22 @@ export const SidebarData = [
 		cName: "sub-nav",
 	},
 	],
+},
+{
+	title: "Upload Documents",
+	path: "/upload-documents",
+	icon: <FaIcons.FaBook />,
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+},
+{
+	title: "Policies",
+	path: "/admin-policies",
+	icon: <FaIcons.FaTasks />,
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
 },
 
 ];
